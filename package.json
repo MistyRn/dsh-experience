@@ -1,0 +1,42 @@
+{
+  "name": "dsh-experience",
+  "version": "0.1.0",
+  "description": "智能体自学习经验库：自动沉淀报错、失败命令与各类经验为本地 md 文档，按分类/单条启用停用，并注入上下文。",
+  "license": "MIT",
+  "author": "DSH user",
+  "private": true,
+  "type": "module",
+  "main": "host.js",
+  "exports": {
+    ".": "./host.js",
+    "./client": "./client.js",
+    "./lib/store": "./lib/store.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "host.js",
+    "client.js",
+    "lib/store.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "dsh-desktop-workbenches"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.0.0"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: 存储引擎单测
+        run: node tests/storage.test.mjs
+      - name: host 半侧冒烟（自带 dsh-tools stub）
+        run: node tests/smoke-host.test.mjs

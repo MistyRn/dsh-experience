@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+
+# 构建产物
+*.tgz
+dist/
+
+# 运行数据（经验库默认在 ~/.dsh/experience，不应进仓库）
+experience/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+.vscode/
+.idea/
