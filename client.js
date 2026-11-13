@@ -75,6 +75,28 @@ window.__ModuleLoader__.load({
       }).then(function (r) { return r.json() })
     }
 
+    // 描边大脑（Lucide brain，ISC License）——镂空 + 脑回褶皱
+    var BRAIN_PATHS = [
+      'M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z',
+      'M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z',
+      'M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4',
+      'M17.599 6.5a3 3 0 0 0 .399-1.375',
+      'M6.003 5.125A3 3 0 0 0 6.401 6.5',
+      'M3.477 10.896a4 4 0 0 1 .585-.396',
+      'M19.938 10.5a4 4 0 0 1 .585.396',
+      'M6 18a4 4 0 0 1-1.967-.516',
+      'M19.967 17.484A4 4 0 0 1 18 18',
+    ]
+
+    function BrainIcon(props) {
+      var size = props.size || 20
+      return h('svg', {
+        width: size, height: size, viewBox: '0 0 24 24', fill: 'none',
+        stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round',
+        'aria-hidden': true, style: { flex: '0 0 auto', display: 'block' },
+      }, BRAIN_PATHS.map(function (d, i) { return h('path', { key: i, d: d }) }))
+    }
+
     function Badge(props) {
       return h('span', { className: 'dx-badge', style: props.color ? { color: props.color, borderColor: props.color } : undefined }, props.children)
     }
@@ -399,7 +421,7 @@ window.__ModuleLoader__.load({
         style: { boxSizing: 'border-box', minHeight: '100%', overflow: 'auto', padding: '18px 22px 48px', color: C.primary, fontSize: 13, background: C.bgBase },
       }, [
         h('div', { key: 'title', style: { display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', marginBottom: 12 } }, [
-          h('h1', { key: 'h', style: { fontSize: 18, margin: 0, fontWeight: 600 } }, '智能体自学习经验库'),
+          h('div', { key: 'h', className: 'dx-row', style: { gap: 8, alignItems: 'center' } }, [h(BrainIcon, { key: 'i', size: 22 }), h('h1', { key: 't', style: { fontSize: 18, margin: 0, fontWeight: 600 } }, '智能体自学习经验库')]),
           h('span', { key: 'm', className: 'dx-muted' }, '档位 ' + (data.mode || 'assisted') + ' · ' + (data.rootDir || '')),
         ]),
         h('div', { key: 'stats', style: { display: 'flex', flexWrap: 'wrap', margin: '-4px' } }, [
@@ -488,6 +510,7 @@ window.__ModuleLoader__.load({
               title: '经验库',
               description: '智能体自学习经验库：查看、编辑、启用/停用本地沉淀的经验。',
               customFrame: true,
+              icon: '🧠',
             }, ExperiencePanel)
           }, 'dsh-experience: workbench panel')
         })

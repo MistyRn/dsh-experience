@@ -1,9 +1,14 @@
 {
   "name": "dsh-experience",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "智能体自学习经验库：自动沉淀报错、失败命令与各类经验为本地 md 文档，按分类/单条启用停用，并注入上下文。",
   "license": "MIT",
   "author": "MistyRn",
+  "contributors": [
+    "MistyRn",
+    "DSH",
+    "DeepSeek V4.1 Flash"
+  ],
   "private": true,
   "type": "module",
   "main": "host.js",

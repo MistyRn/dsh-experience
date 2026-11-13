@@ -72,6 +72,14 @@ node tests/smoke-host.test.mjs  # host smoke test (9 tools, stubbed dsh-tools)
 pnpm pack                       # build the tgz
 ```
 
+## Contributors
+
+- **MistyRn** — author / maintainer
+- **DSH** — design and implementation collaboration
+- **DeepSeek V4.1 Flash** — AI pair programmer
+
+> The brain icon paths come from [Lucide](https://lucide.dev) (`brain`, ISC License).
+
 ## License
 
 [MIT](LICENSE)

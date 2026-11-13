@@ -221,6 +221,14 @@ pnpm pack                       # 打包为 tgz
 
 在 DSH `0.2.2-alpha` 系列实测（`@deepseek-ai/dsh-tools` 的 `defineTool`、`systemPrompt.section`、`webServer.register`、`tools/result` 事件、`desktopWorkbenches.register`）。DSH 大版本变更后如面板或注入失效，请先看控制台里 `[dsh-experience]` 前缀的日志。
 
+## 贡献者
+
+- **MistyRn** — 作者 / 维护者
+- **DSH** — 设计与实现协作
+- **DeepSeek V4.1 Flash** — AI 协作开发
+
+> 面板中的大脑图标路径来自 [Lucide](https://lucide.dev)（`brain`，ISC License）。
+
 ## 许可证
 
 [MIT](LICENSE)
