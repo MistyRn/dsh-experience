@@ -2,6 +2,14 @@
 
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [0.1.1] - 2026-11-13
+
+### 修复
+
+- 面板「手动新增 / 新建分类 / 编辑」点击无反应：Electron 不支持 window.prompt()，改为面板内嵌弹窗表单。
+- 「测试应用」不再使用 window.alert()，改为弹窗内展示召回结果。
+- 按钮配色改用 DSH 官方设计 token（button-primary-fill + label-primary-inverted），修复「新建分类」观感，并补上 hover 反馈。
+
 ## [0.1.0] - 2026-11-13
 
 首个公开版本。

@@ -1,6 +1,6 @@
 {
   "name": "dsh-experience",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "智能体自学习经验库：自动沉淀报错、失败命令与各类经验为本地 md 文档，按分类/单条启用停用，并注入上下文。",
   "license": "MIT",
   "author": "MistyRn",
