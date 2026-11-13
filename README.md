@@ -48,7 +48,7 @@
 ### 方式二：直接放进 Profile 插件目录
 
 ```bash
-git clone https://github.com/GA17-LHY/dsh-experience.git
+git clone https://github.com/MistyRn/dsh-experience.git
 # 将目录放入你的 DSH Profile 插件目录，然后重启 DSH
 ```
 
