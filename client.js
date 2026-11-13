@@ -495,6 +495,13 @@ window.__ModuleLoader__.load({
       ])
     }
 
+    var PANEL_ID = 'dsh-experience'
+
+    // 侧边栏选项卡图标：16px 纯描边（与其他选项卡一致，无填充、无颜色）
+    function SidebarIcon() {
+      return h(BrainIcon, { size: 16 })
+    }
+
     function apply(ctx) {
       try {
         if (!require('react')) return
@@ -504,24 +511,25 @@ window.__ModuleLoader__.load({
       }
       ensureStyle()
       try {
-        ctx.inject(['desktopWorkbenches'], function (scope) {
-          scope.effect(function () {
-            return scope.desktopWorkbenches.register({
-              title: '经验库',
-              description: '智能体自学习经验库：查看、编辑、启用/停用本地沉淀的经验。',
-              customFrame: true,
-              icon: '🧠',
-            }, ExperiencePanel)
-          }, 'dsh-experience: workbench panel')
+        ctx.slots.inject('sidebar.panellist', function () {
+          return ctx.slots.register({
+            name: 'sidebar.panellist',
+            id: PANEL_ID,
+            order: 5,
+            label: function () { return '经验库' },
+          }, SidebarIcon)
         })
-        console.info('[dsh-experience] 已注册工作台「经验库」')
+        ctx.slots.inject('main', function () {
+          return ctx.slots.register({ name: 'main', key: PANEL_ID }, ExperiencePanel)
+        })
+        console.info('[dsh-experience] 已注册侧边栏选项卡「经验库」')
       } catch (e) {
-        console.warn('[dsh-experience] 工作台面板未注册：', e)
+        console.warn('[dsh-experience] 侧边栏选项卡未注册：', e)
       }
     }
 
     exports.apply = apply
-    exports.inject = ['desktopWorkbenches']
+    exports.inject = ['slots']
     return module.exports
   },
 })

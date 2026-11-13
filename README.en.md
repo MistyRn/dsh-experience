@@ -23,7 +23,7 @@ Most memory plugins hide state inside a vector store or a prompt blob. dsh-exper
 - markdown as the source of truth; `index.json` is derived and rebuildable.
 - Nine `exp_*` agent tools: record, list, search, stats, enable, disable, merge, categories, revert.
 - Automatic context injection: an overview at session start, plus targeted recall when a tool fails.
-- A workbench panel: category tree, item list, stats, search, edit, merge, revert, zip export.
+- A dedicated sidebar tab: category tree, item list, stats, search, edit, merge, revert, zip export.
 - Privacy first: secrets are redacted before writing; blocked kinds are rejected outright.
 - Maturity model: new items start as candidates and are promoted as they keep proving useful.
 
@@ -31,7 +31,7 @@ Most memory plugins hide state inside a vector store or a prompt blob. dsh-exper
 
 1. Download `dsh-experience-0.1.0.tgz` from [Releases](../../releases).
 2. In DSH's **Plugin Manager**, install it as a local plugin.
-3. Restart DSH. A new **Experience** page appears under Workbench.
+3. Restart DSH. A new **Experience** tab appears in the left sidebar.
 
 ## Usage
 
